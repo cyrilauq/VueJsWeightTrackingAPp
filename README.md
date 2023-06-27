@@ -1,6 +1,12 @@
 # VueJsWeightTrackingAPp
 
-This template should help get you started developing with Vue 3 in Vite.
+Weight tracker app made with VueJS.
+User can track his weight by adding it in input section.
+User have to add his height too.
+The Program will calculate user's BMI and show if it is within the standards.
+Program will also show your weight history.
+
+For the moment, the stockage of all the informations will be on the client side.
 
 ## Recommended IDE Setup
 
