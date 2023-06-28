@@ -26,7 +26,7 @@
     <!-- TODO: Add fact section for displaying current wieght (last encoded), current BMI(computed with last data encoded), weight history(just display a button) -->
     <!-- TODO: Create a routeur to have different page: settings(update user informations), weights(history of weight), dashboard -->
     <!-- TODO: Use LocalStorage to store the data of the client -->
-    <AddDataVue v-model:factsInfos="currentData" @addData="addNewData" />
+    <AddDataVue @addData="addNewData" />
     <FactsVue v-model:factsInfos="currentData" />
     <FooterVue />
 </template>

@@ -1,4 +1,6 @@
-export { FactsInfos }
+export { FactsInfos, factsInfosOf }
+
+import { FactsInfosFormatError } from '@/modules/errors/FactsInfosErrors'
 
 class FactsInfos {
     weight: number
@@ -21,4 +23,25 @@ class FactsInfos {
         return Math.round((this.weight / (this.height * this.height)) * 100) / 100
     }
 
+}
+
+/**
+ * Create a new FactsInfos with the given values and validate their format.
+ * 
+ * @param weight 
+ * @param height 
+ * 
+ * @returns 
+ */
+function factsInfosOf(weight: string, height: string): FactsInfos {
+    if(/^[^0-9.]*$/.test(weight)) {
+        throw new FactsInfosFormatError("The given weight format isn't valid")
+    }
+    if(/^[^0-9.]*$/.test(height)) {
+        throw new FactsInfosFormatError("The given height format isn't valid")
+    }
+    return new FactsInfos({
+        weight: parseFloat(weight),
+        height: parseFloat(height)
+    });
 }
